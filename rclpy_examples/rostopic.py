@@ -16,19 +16,16 @@
 # limitations under the License.
 
 import sys
-
 import rclpy
 from rclpy.qos import qos_profile_default
-from std_msgs.msg import String
 
-import rclpy.rosnode as rosnode
+import rclpy.rostopic as rostopic
 
 
 def main(args=None):
 
-    # TODO discuss whether rclpy should or shouldn't be initialized here
-    #rclpy.init(argv)
-    rosnode.rosnodemain()
+    rclpy.init(args)
+    rostopic.rostopicmain()
 
 
 if __name__ == '__main__':
