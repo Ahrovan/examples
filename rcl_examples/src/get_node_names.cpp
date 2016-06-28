@@ -1,4 +1,5 @@
 #include <rcl/rcl.h>
+#include <rcl/graph.h>
 #include <iostream>
 #include <cstring>
 /*
@@ -31,6 +32,17 @@ int main(int argc, char ** argv)
 
     for(unsigned int i = 0; i < node_names.count; i++){
         std::cout << "->/" << node_names.data[i] << std::endl;
+    }
+
+    rcl_topic_names_and_types_t topic_names_and_types;
+    topic_names_and_types.topic_count = 0;
+    topic_names_and_types.topic_names = NULL;
+    topic_names_and_types.type_names = NULL;
+    rcl_ret_t result = rcl_get_topic_names_and_types(&node_ptr, &topic_names_and_types);
+    std::cout << "result: " << result << std::endl;
+    for(unsigned int i = 0; i < topic_names_and_types.topic_count; i++){
+        std::cout << topic_names_and_types.topic_names[i] << std::endl;
+
     }
 
 }
