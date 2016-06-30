@@ -7,8 +7,8 @@ if(NOT WIN32)
 endif()
 
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
 find_package(rcl REQUIRED)
+find_package(rclcpp REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(rmw REQUIRED)
 find_package(rmw_implementation_cmake REQUIRED)
@@ -19,7 +19,6 @@ function(custom_executable)
  		src/get_node_names.cpp
 	)
 	ament_target_dependencies(get_node_names${target_suffix}
-	  "rclcpp${target_suffix}"
 	  "rcl${target_suffix}"
 	)
 
