@@ -24,9 +24,7 @@ import rclpy.rostopic as rostopic
 
 def main(args=None):
 
-    rclpy.init(args)
     rostopic.rostopicmain()
-
 
 if __name__ == '__main__':
     main()
